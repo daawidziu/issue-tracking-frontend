@@ -1,0 +1,34 @@
+@use '../abstract' as *
+
+.navList
+  @include flex($spacing: space-between)
+  gap: 50px
+
+
+.navItem
+  font-family: $family-header
+  font-size: $font-ml
+
+.navItemSelected
+  font-weight: bold
+  text-decoration: underline
+
+@media (max-width: 768px)
+  .navList
+    display: none
+    z-index: 9998
+    height: 100vh
+    background-color: $off-white
+    border-left: $light-gray 2px dashed
+    position: absolute
+    inset: 0 0 auto auto
+    width: 200px
+    transform: translateX(100%)
+
+    &:first-child
+      padding-top: 100px
+
+  .navList[data-expanded=true]
+    @include flex($direction: column, $spacing: flex-start)
+    transform: translateX(0%)
+    transition: transform 300ms ease-out 100ms
