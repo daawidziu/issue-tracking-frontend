@@ -1,0 +1,39 @@
+@use '../abstract' as *
+
+.loginContainer
+  @include flex($direction: column)
+  margin-top: 20vh
+  padding: 25px
+  border: $light-gray dashed 2px
+
+.loginTitle
+  font-size: $font-l
+  font-family: $family-header
+  text-align: center
+
+.loginInfo
+  text-align: center
+  font-size: $font-sm
+  max-width: 26ch
+  margin: 1px 5px 5px 5px
+  &Error
+    color: $red
+
+
+.loginContainer
+  font-family: $family-header
+  font-size: $font-ml
+  @include flex($direction: column)
+  gap: 10px
+
+.loginForm
+  font-size: $font-m
+  @include flex($direction: column)
+  gap: 5px
+
+.loginInput
+  @include flex()
+  margin: 10px
+  padding: 5px
+  background-color: $off-white
+  border-radius: 2px
