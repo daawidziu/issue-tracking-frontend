@@ -1,0 +1,28 @@
+@use '../abstract' as *
+
+.btn
+  @include flex()
+  cursor: pointer
+  border-radius: 2px
+  box-shadow: 1px 1px $off-white
+
+  &Small
+    font-size: $font-sm
+    padding: 5px 10px
+
+  &Large
+    font-size: $font-m
+    padding: 5px 10px
+
+  &Primary
+    background-color: $lime
+    color: $white
+
+  &Secondary
+    background-color: $light-gray
+    color: $gray
+
+  &Off
+    background-color: $white
+    border: $light-gray solid 1px
+    color: $gray
