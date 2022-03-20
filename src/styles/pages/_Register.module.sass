@@ -1,0 +1,39 @@
+@use '../abstract' as *
+
+.registerContainer
+  @include flex($direction: column)
+  margin-top: 20vh
+  padding: 25px
+  border: $light-gray dashed 2px
+
+.registerTitle
+  font-size: $font-l
+  font-family: $family-header
+  text-align: center
+
+.registerInfo
+  text-align: center
+  font-size: $font-sm
+  max-width: 25ch
+  margin: 1px 5px 5px 5px
+  &Error
+    color: $red
+
+
+.registerContainer
+  font-family: $family-header
+  font-size: $font-ml
+  @include flex($direction: column)
+  gap: 10px
+
+.registerForm
+  font-size: $font-m
+  @include flex($direction: column)
+  gap: 5px
+
+.registerInput
+  @include flex()
+  margin: 10px
+  padding: 5px
+  background-color: $off-white
+  border-radius: 2px
