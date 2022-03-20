@@ -1,0 +1,42 @@
+@use '../abstract' as *
+
+.headerBar
+  @include flex($spacing: space-between)
+  position: relative
+  max-width: 1200px
+  padding: 10px 20px
+  margin: 0 auto
+  word-wrap: break-word
+
+
+.headerButtons
+  @include flex()
+  gap: 10px
+
+.logo
+  background-color: $lime
+  color: $white
+  padding: 5px 10px
+  border-radius: 2px
+  font-size: $font-xl
+  font-weight: 700
+  font-family: $family-header
+  word-break: keep-all
+
+.hamburgerMenu
+  display: none
+
+@media (max-width: 768px)
+  .headerBar
+    padding: 15px
+
+
+  .hamburgerMenu
+    @include flex()
+    width: 32px
+    height: 32px
+    z-index: 9999
+
+  .logo
+    text-align: center
+    max-width: 9ch // Remove weird additional spacing on text break
