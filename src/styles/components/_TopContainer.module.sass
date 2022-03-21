@@ -1,0 +1,18 @@
+@use '../abstract' as *
+
+.topContainer
+  @include flex($spacing: space-between)
+  font-family: $family-header
+  font-size: $font-l
+  background-color: $white
+  box-shadow: 2px 2px $gray
+  border-radius: 2px
+  border: 1px solid $light-gray
+  padding: 15px
+  width: 1000px
+  margin: 60px auto 30px auto
+  position: relative
+
+@media (max-width: 1000px)
+  .topContainer
+    width: 95%

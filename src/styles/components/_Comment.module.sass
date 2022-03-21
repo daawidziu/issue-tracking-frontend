@@ -1,0 +1,65 @@
+@use '../abstract' as *
+
+.commentContainer
+  @include flex($direction: column)
+  gap: 20px
+  padding-top: 20px
+  width: 90%
+  padding-bottom: 20px
+
+.commentList
+  @include flex($direction: column)
+  gap: 20px
+  width: 100%
+
+.comment
+  padding: 5px
+  font-family: $family-header
+  font-size: $font-sm
+  background-color: $off-white
+  width: 85%
+  border: 1px solid $light-gray
+
+  .commentTop
+    @include flex($spacing: space-between)
+
+    button
+      @include flex()
+
+  textarea
+    font-size: $font-m
+    font-family: $family-paragraph
+    color: $dark-gray
+    resize: none
+    width: calc(100% - 10px)
+    height: 100px
+    margin: 5px
+    border: 1px dashed $light-gray
+
+  h3
+    font-family: $family-header
+    font-size: $font-l
+
+  h4
+    font-family: $family-header
+    font-size: $font-ml
+
+  p
+    font-size: $font-m
+    font-family: $family-paragraph
+    border-top: 1px dashed $light-gray
+    padding-top: 3px
+
+  .date
+    color: $gray
+    display: block
+    font-size: $font-s
+    margin-bottom: 10px
+    text-transform: uppercase
+
+@media (min-width: 1000px)
+  .commentContainer
+    width: 900px
+
+  .comment
+    width: 800px
