@@ -20,6 +20,13 @@ const Register = () => {
         })
         .catch(error => setMessage('Email already registered!'))
 
+    const loginGuest = () => {
+        Api.post('/auth/login', {
+            email: 'guest@guest.guest',
+            password: 'guest1234.'
+        }).then(response => auth.dispatch({type: 'login'}))
+    }
+
     const auth = useAuth();
 
     return (
@@ -45,7 +52,7 @@ const Register = () => {
                 <input type='submit' value={'Register'}
                        className={stylesBtn.btn + ' ' + stylesBtn.btnSmall + ' ' + stylesBtn.btnSecondary}/>
             </form>
-            <button className={stylesBtn.btn + ' ' + stylesBtn.btnSmall + ' ' + stylesBtn.btnOff}>
+            <button className={stylesBtn.btn + ' ' + stylesBtn.btnSmall + ' ' + stylesBtn.btnOff} onClick={loginGuest}>
                 Login as Guest
             </button>
         </div>

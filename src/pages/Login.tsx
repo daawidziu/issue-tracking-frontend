@@ -16,6 +16,13 @@ const Login = () => {
         .then(response => auth.dispatch({type: 'login'}))
         .catch(reason => console.log(reason))
 
+    const loginGuest = () => {
+        Api.post('/auth/login', {
+            email: 'guest@guest.guest',
+            password: 'guest1234.'
+        }).then(response => auth.dispatch({type: 'login'}))
+    }
+
     const auth = useAuth();
 
     return (
@@ -32,7 +39,7 @@ const Login = () => {
                 </span>
                 <input type='submit' value={'Login'} className={stylesBtn.btn + ' ' + stylesBtn.btnSmall + ' ' + stylesBtn.btnSecondary}/>
             </form>
-            <button className={stylesBtn.btn + ' ' + stylesBtn.btnSmall + ' ' + stylesBtn.btnOff}>
+            <button className={stylesBtn.btn + ' ' + stylesBtn.btnSmall + ' ' + stylesBtn.btnOff} onClick={loginGuest}>
                 Login as Guest
             </button>
         </div>
