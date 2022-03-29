@@ -36,7 +36,6 @@ Use the Agile Boards to support you with your Scrum, Kanban, and mixed processes
 - Live Site URL: [https://issue-tracking-frontend.vercel.app/](https://issue-tracking-frontend.vercel.app/)
 
 ### Built with
-- 
 - Semantic HTML5 markup
 - Mobile-first workflow
 - CSS Flexbox & Grid
