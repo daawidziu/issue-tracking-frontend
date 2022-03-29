@@ -5,6 +5,7 @@ import infoIcon from '../images/info.png';
 import Api from "../services/api";
 import {useAuth} from "../contexts/AuthContext";
 import {useState} from "react";
+import {Navigate} from "react-router-dom";
 
 type Inputs = {
     email: string,
@@ -31,6 +32,7 @@ const Register = () => {
 
     return (
         <div className={styles.registerContainer}>
+            {auth.state.logged && <Navigate to='/' replace={true}/>}
             <h1 className={styles.registerTitle}>Register</h1>
             <form onSubmit={handleSubmit(onSubmit)} className={styles.registerForm}>
                 <input type='email' placeholder={'email'} {...register('email',
