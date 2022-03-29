@@ -15,27 +15,28 @@ const AgileBoards = () => {
     const auth = useAuth();
 
     useEffect(() => {
-            Api.get('issues/')
-                .then(r => setData(r.data))
-                .catch(r => setIsLoading(true))
-                .finally(() => setIsLoading(false));
+        Api.get('issues/')
+            .then(r => setData(r.data))
+            .catch(r => setIsLoading(true))
+            .finally(() => setIsLoading(false));
     }, []);
 
     return (<>
-                            {!auth.state.logged &&
-                        <div className={stylesTop.topContainer}>
-                            <span>Log in to change issue status</span>
-                        </div>}
-        <section className={stylesDD.container}>
-            {isLoading ?
-                <img src={Loading} alt={'Loading Animation'}/> :
-                <>
+            {!auth.state.logged &&
+                <div className={stylesTop.topContainer}>
+                    <span>Log in to change issue status</span>
+                </div>}
+            <section className={stylesDD.container}>
+                {isLoading ?
+                    <img src={Loading} alt={'Loading Animation'}/> :
+                    <>
 
 
                         <IssueDragList issues={data} setIssues={setData}/>
-                </>
-            }
-        </section></>
+                    </>
+                }
+            </section>
+        </>
     );
 }
 
