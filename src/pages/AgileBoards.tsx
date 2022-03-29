@@ -30,8 +30,6 @@ const AgileBoards = () => {
                 {isLoading ?
                     <img src={Loading} alt={'Loading Animation'}/> :
                     <>
-
-
                         <IssueDragList issues={data} setIssues={setData}/>
                     </>
                 }
