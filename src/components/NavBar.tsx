@@ -8,6 +8,7 @@ type Route = {
 
 type Props = {
     expanded: boolean
+    setExpanded: Function
 }
 
 const links: Route[] = [
@@ -25,14 +26,14 @@ const links: Route[] = [
     }
 ];
 
-const NavBar = ({expanded}: Props) => {
+const NavBar = ({expanded, setExpanded}: Props) => {
     return (
         <nav>
             <ul className={styles.navList} data-expanded={`${expanded}`} aria-expanded={`${expanded}`}>
                 {links.map(link =>
                     <ul key={link.name}>
                         <li key={link.url}>
-                            <NavLink to={link.url}
+                            <NavLink to={link.url} onClick={() => setExpanded(false)}
                                      className={({isActive}) => isActive ? styles.navItemSelected + ' ' + styles.navItem : styles.navItem}>
                                 {link.name}
                             </NavLink>

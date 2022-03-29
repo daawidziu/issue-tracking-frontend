@@ -14,7 +14,7 @@ const Header = () => {
     return (
         <header className={styles.headerBar}>
             <Link to="/" className={styles.logo}>Issue Tracker</Link>
-            <NavBar expanded={expanded}/>
+            <NavBar expanded={expanded} setExpanded={setExpanded}/>
             <div className={styles.headerButtons}>
                 {auth.state.logged ?
                     <button className={stylesBtn.btnLarge + ' ' + stylesBtn.btnSecondary + ' ' + stylesBtn.btn}
@@ -23,13 +23,13 @@ const Header = () => {
                     </button>
                     :
                     <>
-                        <Link to="/register">
+                        <Link to="/register" onClick={() => setExpanded(false)}>
                             <button
                                 className={stylesBtn.btnLarge + ' ' + stylesBtn.btnOff + ' ' + stylesBtn.btn}>Register
                             </button>
                         </Link>
 
-                        <Link to="/login">
+                        <Link to="/login" onClick={() => setExpanded(false)}>
                             <button
                                 className={stylesBtn.btnLarge + ' ' + stylesBtn.btnSecondary + ' ' + stylesBtn.btn}>Login
                             </button>
